@@ -14,7 +14,8 @@
 
 const app = {};
 
-app.desiredWord = "house";
+app.desiredWord = "child";
+
 app.dictKey = "a9cac565-bc55-4024-9e9a-7f276804fe69";
 app.dictURL = new URL(
 	`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${app.desiredWord}?key=${app.dictKey}`
@@ -25,18 +26,32 @@ app.thesaurusURL = new URL(
 	`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${app.desiredWord}?key=${app.thesaurusKey}`
 );
 
-fetch(app.dictURL)
-	.then(function (res) {
-		return res.json();
-	})
-	.then(function (jsonResult) {
-		console.log(jsonResult);
-	});
+app.dictionaryAPI = function () {
+	fetch(app.dictURL)
+		.then(function (res) {
+			return res.json();
+		})
+		.then(function (jsonResult) {
+			console.log(jsonResult);
+		});
+};
 
-fetch(app.thesaurusURL)
-	.then(function (res) {
-		return res.json();
-	})
-	.then(function (jsonResult) {
-		console.log(jsonResult);
-	});
+app.thesaurusAPI = function () {
+	fetch(app.thesaurusURL)
+		.then(function (res) {
+			return res.json();
+		})
+		.then(function (jsonResult) {
+			console.log(jsonResult);
+			app.synonyms = jsonResult[0].meta.syns;
+			console.log(app.synonyms);
+		});
+};
+
+app.init = function () {
+	app.desiredWord;
+	app.dictionaryAPI();
+	app.thesaurusAPI();
+};
+
+app.init();
