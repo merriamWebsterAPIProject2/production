@@ -16,25 +16,25 @@ const app = {};
 
 app.desiredWord = "child";
 
-app.dictKey = "a9cac565-bc55-4024-9e9a-7f276804fe69";
-app.dictURL = new URL(
-	`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${app.desiredWord}?key=${app.dictKey}`
-);
+// app.dictKey = "a9cac565-bc55-4024-9e9a-7f276804fe69";
+// app.dictURL = new URL(
+// 	`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${app.desiredWord}?key=${app.dictKey}`
+// );
 
 app.thesaurusKey = "fb667759-bffa-458e-99cc-52ad3a241442";
 app.thesaurusURL = new URL(
 	`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${app.desiredWord}?key=${app.thesaurusKey}`
 );
 
-app.dictionaryAPI = function () {
-	fetch(app.dictURL)
-		.then(function (res) {
-			return res.json();
-		})
-		.then(function (jsonResult) {
-			console.log(jsonResult);
-		});
-};
+// app.dictionaryAPI = function () {
+// 	fetch(app.dictURL)
+// 		.then(function (res) {
+// 			return res.json();
+// 		})
+// 		.then(function (jsonResult) {
+// 			console.log(jsonResult);
+// 		});
+// };
 
 app.thesaurusAPI = function () {
 	fetch(app.thesaurusURL)
@@ -42,7 +42,8 @@ app.thesaurusAPI = function () {
 			return res.json();
 		})
 		.then(function (jsonResult) {
-			console.log(jsonResult);
+			app.definitions = jsonResult[0].shortdef;
+			console.log(app.definitions);
 			app.synonyms = jsonResult[0].meta.syns;
 			console.log(app.synonyms);
 		});
@@ -50,8 +51,11 @@ app.thesaurusAPI = function () {
 
 app.init = function () {
 	app.desiredWord;
-	app.dictionaryAPI();
+	// app.dictionaryAPI();
 	app.thesaurusAPI();
 };
 
 app.init();
+
+
+app.desiredWord = document.querySelector('input[type=text').value;
