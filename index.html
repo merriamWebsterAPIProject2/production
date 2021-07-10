@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dictionary</title>
-        <link rel="stylesheet" href="./styles.css">
-	</head>
-	<body>
-		<h1>Test</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="./styles/scss/styles.scss" />
+  </head>
+  <body>
+    <h1>Test</h1>
 
-		<script src='app.js'></script>
-	</body>
+    <!-- Form -->
+    <form action="#">
+      <label for="search" class="sr-only"></label>
+      <input
+        type="search"
+        id="search"
+        name="search"
+        placeholder="Search for the word"
+      />
+      <input type="submit" value="Search" />
+    </form>
+
+    <div class="box">
+      <ul>
+        <!-- Displaying the results -->
+      </ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
