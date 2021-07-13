@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dictionary</title>
-		<link rel="stylesheet" href="./styles/scss/styles.scss" />
-	</head>
-	<body>
-		<header>
-			<h1>Dictionary App!</h1>
-		</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="./styles/scss/styles.scss" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Dictionary App!</h1>
+    </header>
 
-		<main>
-			<section class="form">
-				<!-- Form -->
-				<form action="#">
-					<label for="search" class="sr-only"></label>
-					<input
-						type="search"
-						id="search"
-						name="search"
-						placeholder="Search for the word"
-					/>
-					<input type="submit" value="Search" />
-				</form>
-			</section>
-			
-			<section class="results">
-				<ul class='resultsList'>
-					<!-- Displaying the results -->
-				</ul>
-			</section>
-	
-			<!-- <div class="box"></div> -->
-		</main>
+    <main>
+      <section class="form">
+        <!-- Form -->
+        <form action="#">
+          <label for="search" class="sr-only"></label>
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Search for the word"
+          />
+          <input type="submit" value="Search" />
+        </form>
+      </section>
 
-		<script src="app.js"></script>
-	</body>
+      <section class="results">
+        <ul class="resultsList">
+          <!-- Displaying the results -->
+        </ul>
+      </section>
+
+      <section>
+        <div class="images">
+          <ul class="imageGallery">
+            <!-- Display images -->
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
