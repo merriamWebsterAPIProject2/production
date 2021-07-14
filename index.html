@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dictionary</title>
-    <link rel="stylesheet" href="./styles/scss/styles.scss" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
-  <body>
-    <header>
-      <h1>Dictionary App!</h1>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dictionary</title>
+		<link rel="stylesheet" href="./styles/scss/styles.scss" />
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/231b86159a.js" crossorigin="anonymous"></script>
 
-    <main>
-      <section class="form">
-        <!-- Form -->
-        <form action="#">
-          <label for="search" class="sr-only"></label>
-          <input
-            type="search"
-            id="search"
-            name="search"
-            placeholder="Search for the word"
-          />
-          <input type="submit" value="Search" />
-        </form>
-      </section>
+		
+	</head>
+	<body>
+		<header>
+			<h1>Dictionary App!</h1>
+		</header>
 
-      <section class="results">
-        <ul class="resultsList">
-          <!-- Displaying the results -->
-        </ul>
-      </section>
+		<main>
+			<section class="form">
+				<!-- Form -->
+				<form action="#">
+					<label for="search" class="sr-only"></label>
+					<input
+						type="search"
+						id="search"
+						name="search"
+						placeholder="Search for a word..."
+						autocomplete="off"
+					/>
+					<input type="submit" value="Search" />
+				</form>
+			</section>
 
-      <section>
-        <div class="images">
-          <ul class="imageGallery">
-            <!-- Display images -->
-          </ul>
-        </div>
-      </section>
-    </main>
+			<section>
+				<div class="desiredWord">
+					<!-- H2 created here to display desired word from search -->
+				</div>
+			</section>
 
-    <script src="app.js"></script>
-  </body>
+			<section class="definitions">
+				<!-- Create an H3 title for definitions -->
+				<ul class="definitionsList">
+					<!-- Display definitions -->
+				</ul>
+				<!-- Display button for audio pronounciation -->
+        <!-- Add speaker icon from Font Awesome -->
+			</section>
+			<section class="synonyms">
+				<!-- Create an H3 title for synonyms -->
+				<ul class="synonymsList">
+					<!-- Display synonyms -->
+				</ul>
+			</section>
+
+			<section>
+				<div class="images">
+					<ul class="imageGallery">
+						<!-- Display images -->
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<script src="app.js"></script>
+	</body>
 </html>
