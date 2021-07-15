@@ -1,10 +1,14 @@
 @import "setup";
 
 button {
-    height: auto;
-    display: inline-block;
+  height: auto;
+  display: inline-block;
 }
 
 i {
-    width: 30%;
+  width: 30%;
+}
+
+h3 {
+  display: none;
 }
