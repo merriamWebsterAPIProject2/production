@@ -1,0 +1,16 @@
+@mixin header() {
+  font-family: $primaryFont;
+  text-align: center;
+}
+
+@mixin subHeading() {
+  font-family: $primaryFont;
+}
+
+@mixin headingh3() {
+  font-family: $primaryFont;
+}
+
+@mixin para {
+  font-family: $secondaryFont;
+}
