@@ -13,8 +13,12 @@ html {
 
 body {
   font-size: 1.5rem;
-  background: rgb(112, 141, 169);
-  color: #fff;
+  background-image: url(../images/whiteTexture.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .skip-link {
@@ -43,6 +47,7 @@ section {
 img {
   width: 100%;
   display: block;
+  object-fit: cover;
 }
 
 a {
@@ -57,20 +62,20 @@ button {
   display: inline-block;
 }
 
-i {
-  width: 30%;
-}
-
 h3 {
   display: none;
+  margin-bottom: 30px;
 }
 
 // Header
 
+header {
+  padding-top: 130px;
+}
+
 h1 {
   @include header();
   animation: text-shadow-drop-bl 0.6s both;
-  font-size: 70px;
 }
 
 @keyframes text-shadow-drop-bl {
@@ -78,12 +83,248 @@ h1 {
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   100% {
-    text-shadow: -6px 6px 18px rgba(0, 0, 0, 0.35);
+    text-shadow: -6px 6px 18px rgba(0, 0, 0, 0.75);
   }
 }
 
-// Footer
+/* Form */
 
-.footerContainer a {
-  width: 8%;
+form {
+  text-align: center;
+}
+
+#search {
+  width: calc(40% - 10px);
+  margin-right: 10px;
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 40px;
+  border: 2px solid $primaryColor;
+  @include para();
+  color: $primaryColor;
+  line-height: 0;
+}
+
+input[type="submit"] {
+  width: calc(15% - 10px);
+  margin-left: 10px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid $primaryColor;
+  @include para();
+  color: $primaryColor;
+  cursor: pointer;
+  line-height: 0;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background: $primaryColor;
+  color: $hoverColor;
+}
+
+/* Section of Desired word */
+
+.desiredWord {
+  display: flex;
+  padding: 30px 0;
+}
+
+.desiredWord h2 {
+  @include subHeading();
+  margin-right: 50px;
+}
+
+.desiredWord button {
+  width: 15%;
+  border: 2px solid $primaryColor;
+  border-radius: 20px;
+  cursor: pointer;
+  color: $primaryColor;
+}
+
+.desiredWord button:hover,
+.desiredWord button:focus {
+  background: $primaryColor;
+  color: $hoverColor;
+}
+
+.desiredWord i {
+  font-size: 40px;
+}
+
+// section of Results
+
+.results {
+  background: $hoverColor;
+  border: 2px solid $primaryColor;
+  width: 65%;
+  margin: 50px auto;
+  border-radius: 30px;
+  display: none;
+  box-shadow: 0 0 25px 5px #9b9b9b;
+  animation: result-shadow-drop-center 0.6s both;
+}
+
+@keyframes result-shadow-drop-center {
+  0% {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
+  }
+}
+
+// Section of Definitions and Synonyms
+
+.definitions,
+.synonyms {
+  padding-top: 30px;
+}
+
+.defH3,
+.synH3 {
+  @include headingh3();
+}
+
+.definitionsList,
+.synonymsList {
+  @include para();
+}
+
+/* Image gallery */
+.images {
+  .imageGallery {
+    height: min(31vw, 44vh);
+    display: flex;
+    list-style-type: none;
+    li {
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      float: left;
+      width: 95%;
+      height: 80%;
+      box-shadow: 0 10px 50px 5px black;
+    }
+  }
+}
+
+/* Footer */
+
+footer {
+  padding-bottom: 1%;
+  .footerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      padding-left: max(2%, 1rem);
+      @include para();
+      padding-top: 10px;
+    }
+    a {
+      width: max(5%, 1rem);
+    }
+    a:hover,
+    a:focus {
+      outline: 2px solid black;
+    }
+  }
+}
+
+// Media Query
+
+@media (max-width: 1040px) {
+  .results {
+    width: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    padding-top: 0px;
+  }
+
+  .results {
+    width: 90%;
+  }
+
+  #search {
+    width: 70%;
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  input[type="submit"] {
+    width: 30%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 709px) {
+  .results {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .images {
+    .imageGallery {
+      flex-direction: column;
+      img {
+        width: 60%;
+        height: 25vh;
+        margin-bottom: 5%;
+      }
+    }
+  }
+  .footerContainer {
+    position: absolute;
+    bottom: -45%;
+    left: 5%;
+    padding-bottom: 2.5%;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  .desiredWord h2 {
+    font-size: 40px;
+  }
+  .desiredWord button {
+    width: 25%;
+  }
+  .desiredWord i {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 40px;
+  }
+  .desiredWord h2 {
+    font-size: 30px;
+  }
+
+  .defH3,
+  .synH3 {
+    font-size: 20px;
+  }
+
+  .definitionsList,
+  .synonymsList {
+    font-size: 15px;
+  }
+
+  footer .footerContainer p {
+    font-size: 15px;
+  }
 }

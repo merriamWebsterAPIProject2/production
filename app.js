@@ -191,6 +191,11 @@ app.displayResult = function (definitionArray, synonymsArray, imageArray) {
 
   // Add event listener to play audio file from URL
 
+  // displaying the class resultd on page load
+
+  const results = document.querySelector(".results");
+  results.style.display = "block";
+
   //   Adding h3 heading for the definitions
   const definitionsSection = document.querySelector(".defH3");
   definitionsSection.style.display = "block";
@@ -208,7 +213,7 @@ app.displayResult = function (definitionArray, synonymsArray, imageArray) {
 
   for (let i = 0; i < definitionArray.length; i++) {
     let liEl = document.createElement("li");
-    liEl.innerHTML = `${definitionArray[i].shortdef}`;
+    liEl.innerHTML = capitalize(`${definitionArray[i].shortdef}`);
     definitionsList.appendChild(liEl);
   }
 
@@ -216,7 +221,7 @@ app.displayResult = function (definitionArray, synonymsArray, imageArray) {
 
   for (let i = 0; i < synonymsArray.length; i++) {
     let liEl = document.createElement("li");
-    liEl.innerHTML = `${synonymsArray[i]}`;
+    liEl.innerHTML = capitalize(`${synonymsArray[i]}`);
     synonymsList.appendChild(liEl);
   }
 
