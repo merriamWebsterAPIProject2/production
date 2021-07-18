@@ -538,7 +538,7 @@ input[type=submit]:focus {
 footer {
   position: absolute;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   margin-top: 10%;
 }
 footer .footerContainer {
